@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+  <title>Quiz Biodiversidade</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <div class="background-image"></div>
+
+    <!-- Tela inicial -->
+    <div id="start-screen" class="screen active">
+      <div class="content-box">
+        <div class="title-container">
+          <div class="quiz-board"></div>
+          <h1 class="title">Biodiversidade de Nova Russas</h1>
+        </div>
+        <div class="buttons">
+          <button class="btn" id="start-btn">Iniciar</button>
+        </div>
+        <div class="logos">
+          <img src="img/logoep.webp" alt="Logo 1" class="logo" />
+        </div>
+        <footer class="footer">
+          <p>Desenvolvido por Felipe Silva,Ana Flávia,  <br> João Pedro, Rafael Silva e Joaquim Neto</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Tela de seleção de perguntas -->
+    <div id="selection-screen" class="screen hidden">
+      <div class="container">
+        <div class="header">
+            <button class="back-btn" onclick="goBackToStart()">⟵</button>
+            <h2>Voltar para o início</h2>
+        </div>
+
+        <div class="questions-grid">
+          <div class="question-box not-answered" data-question="1">
+            <img src="img/img03.jpg" class="question-img">
+            <span class="question-number">1</span>
+          </div>
+          <div class="question-box not-answered" data-question="2">
+            <img src="img/img04.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">2</span>
+          </div>
+          <div class="question-box not-answered" data-question="3">
+            <img src="img/img06.jpeg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">3</span>
+          </div>
+          <div class="question-box not-answered" data-question="4">
+            <img src="img/img02.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">4</span>
+          </div>
+          <div class="question-box not-answered" data-question="5">
+            <img src="img/img01.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">5</span>
+          </div>
+          <div class="question-box not-answered" data-question="6">
+            <img src="img/img07.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">6</span>
+          </div>
+          <div class="question-box not-answered" data-question="7">
+            <img src="img/img07.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">7</span>
+          </div>
+          <div class="question-box not-answered" data-question="8">
+            <img src="img/img08.jpeg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">8</span>
+          </div>
+          <div class="question-box not-answered" data-question="9">
+            <img src="img/img09.jpeg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">9</span>
+          </div>
+          <div class="question-box not-answered" data-question="10">
+            <img src="img/img10.jpeg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">10</span>
+          </div>
+          <div class="question-box not-answered" data-question="11">
+            <img src="img/img11.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">11</span>
+          </div>
+          <div class="question-box not-answered" data-question="12">
+            <img src="img/img12.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">12</span>
+          </div>
+          <div class="question-box not-answered" data-question="13">
+            <img src="img/img13.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">13</span>
+          </div>
+          <div class="question-box not-answered" data-question="14">
+            <img src="img/img14.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">14</span>
+          </div>
+          <div class="question-box not-answered" data-question="15">
+            <img src="img/img15.jpg" alt="imagem pergunta" class="question-img">
+            <span class="question-number">15</span>
+          </div>
+        </div>
+        <div class="score-display">
+            <div class="score">Pontuação: <span id="score">0</span></div>
+            <div class="mistakes">Erros: <span id="mistakes">0</span></div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Tela de pergunta individual -->
+    <div id="question-detail-screen" class="screen hidden">
+        <div class="header">
+          <button class="back-to-questions" onclick="goBackToSelection()">⟵</button>
+          <h2>Pergunta</h2>
+        </div>
+        <div class="question-detail-container">
+          <div id="question-text" class="question-text"></div>
+          <div id="options-container" class="options-container"></div>
+        </div>
+      </div>
+
+    <!-- Tela de resultado final -->
+    <div id="result-screen" class="screen hidden">
+      <div class="result-container">
+        <h2>Quiz Finalizado!</h2>
+        <div class="final-score">Sua pontuação: <span id="final-score"></span></div>
+        <div id="result-message" class="result-message"></div>
+        <button class="btn" id="play-again">Recomeçar</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
