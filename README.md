@@ -1,5 +1,5 @@
 Quiz da Biodiversidade de Nova Russas 🌿🦋
-Este projeto é um quiz interativo desenvolvido para incentivar o conhecimento sobre a biodiversidade de Nova Russas, minha cidade natal. Através de perguntas e respostas divertidas, o objetivo é aproximar as pessoas — especialmente estudantes e moradores — da rica fauna e flora local.
+Este projeto é um quiz interativo desenvolvido para incentivar o conhecimento sobre a biodiversidade de Nova Russas. Através de perguntas e respostas divertidas, o objetivo é aproximar as pessoas — especialmente estudantes e moradores — da rica fauna e flora local.
 
 O quiz foi totalmente construído usando HTML, CSS e JavaScript, oferecendo uma experiência leve, educativa e acessível diretamente pelo navegador.
 
